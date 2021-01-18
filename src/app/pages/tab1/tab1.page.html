@@ -1,5 +1,5 @@
-<ion-header class="ion-no-border" [translucent]="true">
-  <ion-toolbar >
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
     <ion-title>
       News
     </ion-title>
@@ -8,41 +8,6 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-grid fixed>
-    <ion-row>
-      
-      <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" 
-          *ngFor="let new of news; let i = index">
-        <ion-card>
-          
-          <ion-card-header>
-            <ion-card-subtitle>
-
-              <span class="text-primary">
-                {{ i + 1 }}. 
-              </span>
-              <span class="new-source-name">
-                {{ new.source.name }} 
-              </span> 
-              
-            </ion-card-subtitle>
-            <ion-card-title> 
-              {{ new.title }} 
-            </ion-card-title>
-          </ion-card-header>
-
-          <ion-img *ngIf="new.urlToImage" [src]="new.urlToImage"></ion-img>
-
-        </ion-card>
-
-        <ion-card-content>
-          <p>
-            {{ new.description }}
-          </p>
-        </ion-card-content>
-      </ion-col>
-
-    </ion-row>
-  </ion-grid>
+  <app-news [news]="news"></app-news>
 
 </ion-content>
