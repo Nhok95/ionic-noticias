@@ -1,4 +1,4 @@
-<ion-header [translucent]="true" class="ion-no-border">
+<ion-header translucent="true" class="ion-no-border">
   <ion-toolbar>
     <ion-title>
       Encabezados
@@ -19,9 +19,17 @@
 
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content fullscreen="true">
 
   <app-news [news]="news"></app-news>
+
+  <ion-infinite-scroll threshold="150px"
+                      position="bottom" 
+                      (ionInfinite)="loadMoreNews($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" 
+                                 loadingText="Loading more news...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
   
 </ion-content>
