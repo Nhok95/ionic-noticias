@@ -10,13 +10,16 @@
       </span> 
     </ion-card-subtitle>
 
-    <ion-card-title> 
+    <ion-card-title (click)="openNew()"> 
       {{ new.title }} 
     </ion-card-title>
 
   </ion-card-header>
 
-  <ion-img *ngIf="new.urlToImage" [src]="new.urlToImage" alt="Not Available"></ion-img>
+  <ion-img *ngIf="new.urlToImage" 
+           (click)="openNew()" 
+           [src]="new.urlToImage" 
+           alt="Not Available"></ion-img>
 
   <ion-card-content>
     <p>
