@@ -8,6 +8,17 @@
       <span class="new-source-name">
         {{ new.source.name }} 
       </span> 
+
+      <div class="more-news">
+
+        <ion-button (click)="launchMenu()" fill="clear">
+          <ion-icon class="menu-button" slot="icon-only" 
+                    name="ellipsis-vertical"
+                    color="primary"></ion-icon>
+        </ion-button>
+
+      </div>
+
     </ion-card-subtitle>
 
     <ion-card-title (click)="openNew()"> 
